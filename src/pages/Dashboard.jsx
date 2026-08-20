@@ -1,5 +1,7 @@
+import DashboardContainer from '../features/dashboard/DashboardContainer.jsx'
+
 function Dashboard() {
-  return <p className="text-[var(--color-text-muted)]">Hello World</p>
+  return <DashboardContainer />
 }
 
 export default Dashboard

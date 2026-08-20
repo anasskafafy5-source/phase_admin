@@ -1,5 +1,7 @@
+import SettingsContainer from '../features/settings/SettingsContainer.jsx'
+
 function Settings() {
-  return null
+  return <SettingsContainer />
 }
 
 export default Settings

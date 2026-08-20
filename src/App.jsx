@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard.jsx'
 import EditProduct from './pages/EditProduct.jsx'
 import Login from './pages/Login.jsx'
 import Products from './pages/Products.jsx'
+import ProductPage from './pages/ProductPage.jsx'
 import Settings from './pages/Settings.jsx'
 import AppLayout from './ui/AppLayout.jsx'
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/new" element={<AddProduct />} />
+          <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/products/:id/edit" element={<EditProduct />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/accounts" element={<Accounts />} />

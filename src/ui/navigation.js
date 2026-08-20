@@ -17,6 +17,7 @@ export const navigationItems = [
 export function getPageTitle(pathname) {
   if (pathname === '/products/new') return 'Add Product'
   if (pathname.endsWith('/edit')) return 'Edit Product'
+  if (pathname.startsWith('/products/')) return 'Product details'
 
   return navigationItems.find((item) => item.to === pathname)?.label || 'PHASE Admin'
 }

@@ -27,7 +27,51 @@
   --color-border: #404040;
 }
 
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea {
+  color-scheme: dark;
+}
+
 body {
   font-family: "Inter", sans-serif;
   margin: 0;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.form-field:focus {
+  border-color: var(--color-text);
+}
+
+.form-file-field {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.form-file-field::file-selector-button {
+  margin-right: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
 }

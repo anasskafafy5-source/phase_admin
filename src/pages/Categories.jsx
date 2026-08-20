@@ -1,5 +1,7 @@
+import CategoryContainer from '../features/categories/CategoryContainer.jsx'
+
 function Categories() {
-  return null
+  return <CategoryContainer />
 }
 
 export default Categories

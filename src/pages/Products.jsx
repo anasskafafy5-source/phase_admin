@@ -1,5 +1,7 @@
+import ProductsContainer from '../features/products/ProductsContainer.jsx'
+
 function Products() {
-  return null
+  return <ProductsContainer />
 }
 
 export default Products
