@@ -1,5 +1,7 @@
+import AccountsContainer from '../features/auth/AccountsContainer.jsx'
+
 function Accounts() {
-  return null
+  return <AccountsContainer />
 }
 
 export default Accounts

@@ -9,13 +9,14 @@ import Products from './pages/Products.jsx'
 import ProductPage from './pages/ProductPage.jsx'
 import Settings from './pages/Settings.jsx'
 import AppLayout from './ui/AppLayout.jsx'
+import ProtectedRoute from './ui/ProtectedRoute.jsx'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route element={<AppLayout />}>
+        <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/new" element={<AddProduct />} />

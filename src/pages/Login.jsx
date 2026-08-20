@@ -1,5 +1,7 @@
+import LoginContainer from '../features/auth/LoginContainer.jsx'
+
 function Login() {
-  return null
+  return <LoginContainer />
 }
 
 export default Login

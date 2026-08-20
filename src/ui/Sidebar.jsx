@@ -1,8 +1,13 @@
-import { HiOutlineXMark } from 'react-icons/hi2'
-import { NavLink } from 'react-router-dom'
+import { HiOutlineArrowLeftOnRectangle, HiOutlineXMark } from 'react-icons/hi2'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useLogout } from '../features/auth/useLogout.js'
 import { navigationItems } from './navigation.js'
 
 function Sidebar({ isMobile, isOpen, onClose }) {
+  const navigate = useNavigate()
+  const { isPending, logout } = useLogout({
+    onSuccess: () => navigate('/login', { replace: true }),
+  })
   const visible = !isMobile || isOpen
 
   return (
@@ -44,6 +49,17 @@ function Sidebar({ isMobile, isOpen, onClose }) {
             </NavLink>
           ))}
         </nav>
+        <div className="border-t border-[var(--color-border)] p-3">
+          <button
+            type="button"
+            disabled={isPending}
+            onClick={() => logout()}
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-background)] hover:text-[var(--color-text)] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            <HiOutlineArrowLeftOnRectangle className="size-5" />
+            {isPending ? 'Signing out...' : 'Sign out'}
+          </button>
+        </div>
       </aside>
     </>
   )
